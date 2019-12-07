@@ -201,7 +201,7 @@
 				<div class="container">
 					<h1 class="links-page-title">Компания Правильных цен.</h1>
 
-					<div class="links-page-messagers count-3">
+					<div class="links-page-messagers count-4">
 						<a href="mailto:mailto:" target="_blank" style="
 background-color: Transparent;
 border: 1px solid #FFFFFF;
@@ -210,6 +210,15 @@ color: #FFFFFF;
 							class="links-page-messager">
 							<i class="fa fa-envelope-o" aria-hidden="true">
 								</i>Email
+						</a>
+						<a href="https://wa.me/79133353686" target="_blank" style="
+background-color: Transparent;
+border: 1px solid #FFFFFF;
+color: #FFFFFF;
+"
+							class="links-page-messager">
+							<i class="fa fa-whatsapp" aria-hidden="true">
+								</i>WhatsApp
 						</a>
 						<a href="tg://resolve?domain=" target="_blank" style="
 background-color: Transparent;
@@ -254,25 +263,6 @@ border: 1px solid #FFFFFF;
 							<center><img src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/e35/71734908_233681100952110_8863122297090680384_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=106&oh=ca25a7cf66a086d556b41d43151f78df&oe=5E800B83" alt="">
 							</img></center>
 						</div>
-
-
-
-
-
-						<a href="https://wa.me/79133353686" class="links-page-btn " style="
-border: 1px solid #FFFFFF;
-background-color: Transparent;
---elems-color: ;
---elems-hover: ;
-color: #FFFFFF;
-" 
-						target="_blank"
->
-
-							<strong>
-								Сайт
-							</strong>
-						</a>
 
 
 					</div>
@@ -329,15 +319,17 @@ $(document).ready(function(){
                 contentType: 'application/json',
 		data : form_data
 	}).done(function(response){
-		$(this).find('input').disable();
-		$(this).find('button').disable();
-
-	    var email = response.sentEmail;
+	    var email = response.email;
 		if (email) {
-	        $("leadSend").html("Ваш запрос отправлен на " + email);
+	        $("#leadSent").text("Ваш запрос отправлен на " + email);
 		} else {
-	        $("leadSend").html("Ваш запрос отправлен");
+	        $("#leadSent").text("Ваш запрос отправлен");
 		}
+
+		var input = form.find('input');
+		input.attr('readonly', true);
+        input.attr("disabled", true);
+		form.find('button').attr("disabled", true);
 	}).fail(function(){
 	});
 
