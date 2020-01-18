@@ -68,7 +68,7 @@
 						<div class="header__title">Компания Правильных цен.</div>
 					</div>
 					<div id="settingsContainer" class="header__right" style="display:none">
-						<button onclick="window.open('http://itsinsta.site/page.html?project=potolki_okna_mebel_nvkz');" class="btn stories-popup__buy">Настроить</button>
+						<button onclick="window.open('http://itsinsta.site/page.html?project=potolki_okna_mebel_nvkz', '_self');" class="btn stories-popup__buy">Настроить</button>
 					</div>
 				</div>
 			</div>
@@ -279,7 +279,7 @@ color: #FFFFFF;
 
 
 						<div class="links-page-btn-pic">
-							<center><img src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/e35/75430295_241676360131832_7544838645829073764_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=108&_nc_ohc=XG4u00JAJc8AX_8Y0Oy&oh=3f66b19af2fbf50c0f2b6bb0724ce82b&oe=5ED36651" alt="">
+							<center><img src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/e35/75430295_241676360131832_7544838645829073764_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=108&_nc_ohc=pD0psp6pZrQAX80vk0R&oh=460426ffdbb72a93d704be59311a072e&oe=5ED36651" alt="">
 							</img></center>
 						</div>
 
@@ -337,7 +337,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 $(document).ready(function(){
 	var lid = getUrlParameter("lid");
-	if (lid) {
+	if (lid && lid != "true") {
         localStorage.setItem("hasToken", true);
 
 		$("#settingsContainer").show();
