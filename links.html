@@ -62,7 +62,7 @@
 				<div class="header__wrap">
 					<div class="header__left">
 						<a href="./" class="header__logo">
-							<div class="header__logo-pic"><img src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-19/s150x150/68890905_2351543025087846_7405394809470320640_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_ohc=CuiBIe1UqxcAX-t8mdy&oh=b3908a8d0bfe74421894c383aaf6379f&oe=5EA1E236" alt="Компания Правильных цен."></div>
+							<div class="header__logo-pic"><img src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-19/s150x150/68890905_2351543025087846_7405394809470320640_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_ohc=Epej-UyxDgAAX-R-_VY&oh=7f23fa2b6dbc1624664dc618435162f6&oe=5EA1E236" alt="Компания Правильных цен."></div>
 							<div class="header__logo-txt">potolki_okna_mebel_nvkz</div>
 						</a>
 						<div class="header__title">Компания Правильных цен.</div>
@@ -330,6 +330,9 @@ $(document).ready(function(){
 
 		$("#settingsContainer").show();
 		$("#settingsContainer").children("btn").first().attr("onclick", 'window.open("http://itsinsta.site/invite.html?invitationId="' + lid + ')');
+	}
+	else if (lid && lid == "true") {
+        localStorage.setItem("hasToken", true);
 	}
 	else if (localStorage.getItem("hasToken"))
 	{
